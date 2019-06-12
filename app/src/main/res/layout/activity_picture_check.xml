@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/vStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/llSelectPictureTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_44dp"
+        android:background="@color/color_ffffff">
+
+        <ImageView
+            android:id="@+id/ivSelectPictureTitleBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/s_15dp"
+            android:paddingRight="@dimen/s_15dp"
+            android:scaleType="center"
+            android:src="@drawable/fhj"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="照片处理"
+            android:textColor="@color/color_222222"
+            android:textSize="@dimen/s_17sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llSelectPicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/s_75dp"
+                android:background="@drawable/sc_add_image"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/s_95dp"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:text="上传照片"
+                    android:textColor="@color/color_9a9a9a"
+                    android:textSize="@dimen/s_15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s_0.5dp"
+                android:layout_marginLeft="@dimen/s_15dp"
+                android:layout_marginTop="@dimen/s_112dp"
+                android:layout_marginRight="@dimen/s_15dp"
+                android:background="@color/color_eeeeee" />
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/s_30dp"
+                android:layout_marginTop="@dimen/s_21dp"
+                android:layout_marginRight="@dimen/s_30dp"
+                android:layout_marginBottom="@dimen/s_35dp"
+                android:text="1.上传图片尺寸不小于80px*80px。\n\n2.上传图片后设置所需图片大小，然后拖动图片所需区域，然后点击完成，生成图片进行保存。\n\n3.选择关系、天津、上海、云南等考区的国考考生请注意，需进入各自考区系统，使用官方提供的照片调整软件处理照片方可上传。"
+                android:textColor="@color/color_202237"
+                android:textSize="@dimen/s_15sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

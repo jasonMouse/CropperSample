@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_white_top_corner_4dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/s_20dp"
+            android:paddingTop="@dimen/s_12dp"
+            android:paddingRight="@dimen/s_20dp"
+            android:paddingBottom="@dimen/s_12dp"
+            android:text="取消"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/s_14sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="自定义尺寸"
+            android:textColor="@color/color_2a2a2a"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tvConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/s_20dp"
+            android:paddingTop="@dimen/s_12dp"
+            android:paddingRight="@dimen/s_20dp"
+            android:paddingBottom="@dimen/s_12dp"
+            android:text="确定"
+            android:textColor="@color/color_ff6e73"
+            android:textSize="@dimen/s_14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_fff_top_bottom_d9d9d9_1px"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/s_20dp"
+            android:paddingTop="@dimen/s_13dp"
+            android:paddingBottom="@dimen/s_13dp"
+            android:text="宽 ："
+            android:textColor="@color/color_2a2a2a"
+            android:textSize="@dimen/s_17sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etWidth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:digits="@string/str_number"
+            android:gravity="center_vertical"
+            android:hint="0"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:nextFocusForward="@+id/etHeight"
+            android:singleLine="true"
+            android:textColor="@color/color_2a2a2a"
+            android:textColorHint="@color/color_c8c8c8"
+            android:textCursorDrawable="@drawable/shape_cursor"
+            android:textSize="@dimen/s_17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/s_13dp"
+            android:paddingRight="@dimen/s_20dp"
+            android:paddingBottom="@dimen/s_13dp"
+            android:text="px"
+            android:textColor="@color/color_c8c8c8"
+            android:textSize="@dimen/s_17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_fff_top_bottom_d9d9d9_1px"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/s_20dp"
+            android:paddingTop="@dimen/s_13dp"
+            android:paddingBottom="@dimen/s_13dp"
+            android:text="高 ："
+            android:textColor="@color/color_2a2a2a"
+            android:textSize="@dimen/s_17sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etHeight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:digits="@string/str_number"
+            android:gravity="center_vertical"
+            android:hint="0"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/color_2a2a2a"
+            android:textColorHint="@color/color_c8c8c8"
+            android:textCursorDrawable="@drawable/shape_cursor"
+            android:textSize="@dimen/s_17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/s_13dp"
+            android:paddingRight="@dimen/s_20dp"
+            android:paddingBottom="@dimen/s_13dp"
+            android:text="px"
+            android:textColor="@color/color_c8c8c8"
+            android:textSize="@dimen/s_17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

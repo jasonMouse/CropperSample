@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--边界线的宽度-->
+    <dimen name="border_thickness">1.5dp</dimen>
+    <!--角界线的宽度-->
+    <dimen name="corner_thickness">2.5dp</dimen>
+    <!--辅助线的宽度-->
+    <dimen name="guideline_thickness">0.5dp</dimen>
+    <!--可触摸半径-->
+    <dimen name="target_radius">15dp</dimen>
+    <!--捕捉半径-->
+    <dimen name="snap_radius">3dp</dimen>
+    <!--角边线长度-->
+    <dimen name="corner_length">20dp</dimen>
+</resources>
