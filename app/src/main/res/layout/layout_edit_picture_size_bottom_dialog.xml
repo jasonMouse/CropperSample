@@ -18,7 +18,7 @@
             android:paddingTop="@dimen/s_12dp"
             android:paddingRight="@dimen/s_20dp"
             android:paddingBottom="@dimen/s_12dp"
-            android:text="取消"
+            android:text="@string/str_cancel"
             android:textColor="@color/color_666666"
             android:textSize="@dimen/s_14sp" />
 
@@ -27,7 +27,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="自定义尺寸"
+            android:text="@string/str_customize_size"
             android:textColor="@color/color_2a2a2a"
             android:textSize="17sp" />
 
@@ -39,7 +39,7 @@
             android:paddingTop="@dimen/s_12dp"
             android:paddingRight="@dimen/s_20dp"
             android:paddingBottom="@dimen/s_12dp"
-            android:text="确定"
+            android:text="@string/str_confirm"
             android:textColor="@color/color_ff6e73"
             android:textSize="@dimen/s_14sp" />
     </LinearLayout>
@@ -56,7 +56,7 @@
             android:paddingLeft="@dimen/s_20dp"
             android:paddingTop="@dimen/s_13dp"
             android:paddingBottom="@dimen/s_13dp"
-            android:text="宽 ："
+            android:text="@string/str_width_colon"
             android:textColor="@color/color_2a2a2a"
             android:textSize="@dimen/s_17sp"
             android:textStyle="bold" />
@@ -88,7 +88,7 @@
             android:paddingTop="@dimen/s_13dp"
             android:paddingRight="@dimen/s_20dp"
             android:paddingBottom="@dimen/s_13dp"
-            android:text="px"
+            android:text="@string/str_pixel"
             android:textColor="@color/color_c8c8c8"
             android:textSize="@dimen/s_17sp"
             android:textStyle="bold" />
@@ -106,7 +106,7 @@
             android:paddingLeft="@dimen/s_20dp"
             android:paddingTop="@dimen/s_13dp"
             android:paddingBottom="@dimen/s_13dp"
-            android:text="高 ："
+            android:text="@string/str_height_colon"
             android:textColor="@color/color_2a2a2a"
             android:textSize="@dimen/s_17sp"
             android:textStyle="bold" />
@@ -137,7 +137,7 @@
             android:paddingTop="@dimen/s_13dp"
             android:paddingRight="@dimen/s_20dp"
             android:paddingBottom="@dimen/s_13dp"
-            android:text="px"
+            android:text="@string/str_pixel"
             android:textColor="@color/color_c8c8c8"
             android:textSize="@dimen/s_17sp"
             android:textStyle="bold" />

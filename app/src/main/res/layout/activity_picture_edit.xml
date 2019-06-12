@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,33 +12,30 @@
         android:layout_height="0dp" />
 
     <!--头顶布局-->
-    <RelativeLayout
-        android:id="@+id/rlEditPictureTitle"
+    <LinearLayout
+        android:id="@+id/llEditPictureTitle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/s_44dp"
         android:layout_below="@+id/vStatus"
+        android:gravity="right|center_vertical"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/ivEditPictureTitle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
+            android:layout_height="match_parent"
             android:paddingLeft="@dimen/s_15dp"
-            android:paddingTop="@dimen/s_5dp"
             android:paddingRight="@dimen/s_15dp"
-            android:paddingBottom="@dimen/s_5dp"
             android:src="@drawable/icon_guab_bs"
             android:visibility="gone" />
-    </RelativeLayout>
+    </LinearLayout>
 
     <!--裁剪布局-->
     <LinearLayout
         android:id="@+id/llEditPictureRoot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/rlEditPictureTitle"
+        android:layout_below="@+id/llEditPictureTitle"
         android:orientation="vertical"
         android:visibility="visible">
 
@@ -46,7 +44,7 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <com.edmodo.cropper.CropImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <com.edmodo.cropper.CropImageView
                 android:id="@+id/civEditPicture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -85,7 +83,7 @@
                 <TextView
                     android:id="@+id/tvCancel"
                     style="@style/edit_picture_text_style"
-                    android:text="取消"
+                    android:text="@string/str_cancel"
                     android:textColor="@color/color_666666" />
             </FrameLayout>
 
@@ -98,7 +96,7 @@
                 <TextView
                     android:id="@+id/tvNationalExam"
                     style="@style/edit_picture_text_style"
-                    android:text="国考"
+                    android:text="@string/str_national_exam"
                     android:textColor="@color/color_ffffff" />
             </FrameLayout>
 
@@ -111,7 +109,7 @@
                 <TextView
                     android:id="@+id/tvOneInch"
                     style="@style/edit_picture_text_style"
-                    android:text="1寸"
+                    android:text="@string/str_on_inch"
                     android:textColor="@color/color_ffffff" />
             </FrameLayout>
 
@@ -124,7 +122,7 @@
                 <TextView
                     android:id="@+id/tvTwoInch"
                     style="@style/edit_picture_text_style"
-                    android:text="2寸"
+                    android:text="@string/str_two_inch"
                     android:textColor="@color/color_ffffff" />
             </FrameLayout>
 
@@ -137,7 +135,7 @@
                 <TextView
                     android:id="@+id/tvCustomize"
                     style="@style/edit_picture_text_style"
-                    android:text="自定义"
+                    android:text="@string/str_customize"
                     android:textColor="@color/color_ffffff" />
             </FrameLayout>
 
@@ -150,7 +148,7 @@
                 <TextView
                     android:id="@+id/tvFinish"
                     style="@style/edit_picture_text_style"
-                    android:text="完成"
+                    android:text="@string/str_finish"
                     android:textColor="@color/color_ff2a31" />
             </FrameLayout>
             <!--shape_bg_white_corner_4dp-->
@@ -162,22 +160,27 @@
         android:id="@+id/llCheckPictureRoot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/rlEditPictureTitle"
+        android:layout_below="@+id/llEditPictureTitle"
         android:orientation="vertical"
         android:visibility="gone">
 
         <!--动态添加和删除ImageView解决图片的适配问题-->
         <FrameLayout
-            android:id="@+id/flCheckPicture"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1" />
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:id="@+id/flCheckPicture"
+                android:layout_width="@dimen/s_275dp"
+                android:layout_height="@dimen/s_275dp"
+                android:layout_gravity="center" />
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/s_15dp"
             android:layout_marginBottom="@dimen/s_15dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
@@ -190,7 +193,7 @@
                 android:drawableTop="@drawable/photo_return"
                 android:drawablePadding="@dimen/s_14dp"
                 android:gravity="center_horizontal"
-                android:text="重新裁剪"
+                android:text="@string/str_re_cut"
                 android:textColor="@color/color_c8c8c8"
                 android:textSize="@dimen/s_15sp" />
 
@@ -202,7 +205,7 @@
                 android:drawableTop="@drawable/photo_down"
                 android:drawablePadding="@dimen/s_14dp"
                 android:gravity="center_horizontal"
-                android:text="保存到本地"
+                android:text="@string/str_save_local"
                 android:textColor="@color/color_c8c8c8"
                 android:textSize="@dimen/s_15sp" />
         </LinearLayout>

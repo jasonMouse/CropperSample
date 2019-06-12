@@ -128,15 +128,15 @@ public class PictureCheckActivity extends AppCompatActivity {
                                     intent.putExtra("data", path);
                                     context.startActivity(intent);
                                 } else {
-                                    ToastUtil.shortMsg(context, "图片尺寸过小，请选择其他图片");
+                                    ToastUtil.shortMsg(context, context.getResources().getString(R.string.str_picture_size_too_small));
                                 }
                                 // 这个bitmap也就用来测算一下高度
                                 bitmap.recycle();
                             } else {
-                                ToastUtil.shortMsg(context, "图片文件不存在，请重新选取后再试");
+                                ToastUtil.shortMsg(context, context.getResources().getString(R.string.str_picture_not_exist));
                             }
                         } else {
-                            ToastUtil.shortMsg(context, "图片文件不存在，请重新选取后再试");
+                            ToastUtil.shortMsg(context, context.getResources().getString(R.string.str_picture_not_exist));
                         }
                     }
                     break;

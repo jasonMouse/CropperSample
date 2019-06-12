@@ -25,7 +25,7 @@
             android:paddingLeft="@dimen/s_15dp"
             android:paddingRight="@dimen/s_15dp"
             android:scaleType="center"
-            android:src="@drawable/fhj"
+            android:src="@drawable/nav_back"
             android:visibility="visible" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:singleLine="true"
-            android:text="照片处理"
+            android:text="@string/str_picture_handle"
             android:textColor="@color/color_222222"
             android:textSize="@dimen/s_17sp" />
     </RelativeLayout>
@@ -67,7 +67,7 @@
                     android:enabled="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
-                    android:text="上传照片"
+                    android:text="@string/str_upload_picture"
                     android:textColor="@color/color_9a9a9a"
                     android:textSize="@dimen/s_15sp" />
             </LinearLayout>
@@ -88,7 +88,7 @@
                 android:layout_marginTop="@dimen/s_21dp"
                 android:layout_marginRight="@dimen/s_30dp"
                 android:layout_marginBottom="@dimen/s_35dp"
-                android:text="1.上传图片尺寸不小于80px*80px。\n\n2.上传图片后设置所需图片大小，然后拖动图片所需区域，然后点击完成，生成图片进行保存。\n\n3.选择关系、天津、上海、云南等考区的国考考生请注意，需进入各自考区系统，使用官方提供的照片调整软件处理照片方可上传。"
+                android:text="@string/str_upload_picture_rules"
                 android:textColor="@color/color_202237"
                 android:textSize="@dimen/s_15sp" />
         </LinearLayout>

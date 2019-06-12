@@ -1,6 +1,33 @@
 <resources>
     <string name="app_name">CropperSample</string>
 
-    <string name="not_allowed_gif">不允许选择动态图</string>
     <string name="str_number">0123456789</string>
+
+    <string name="str_upload_picture">上传照片</string>
+    <string name="str_picture_handle">照片处理</string>
+    <string name="str_upload_picture_rules">1.上传图片尺寸不小于80px*80px。\n\n2.上传图片后设置所需图片大小，然后拖动图片选择所需区域，然后点击完成，生成图片进行保存。\n\n3.选择广西、天津、上海、云南等考区的国考考生请注意：需进入各自考区系统，使用官方提供的照片调整软件处理照片方可上传。</string>
+
+    <string name="not_allowed_gif">不允许选择动态图</string>
+    <string name="str_input_width_max_value">输入的宽度不得超过%d</string>
+    <string name="str_input_height_max_value">输入的高度不得超过%d</string>
+    <string name="str_picture_not_exist">图片文件不存在，请重新选取后再试</string>
+    <string name="str_picture_size_too_small">图片尺寸过小，请选择其他图片</string>
+    <string name="str_picture_size">%dpx*%dpx</string>
+    <string name="str_picture_save_success">存储成功！</string>
+    <string name="str_picture_save_fail">存储失败！</string>
+    <string name="str_parameter_passing_error">参数传递错误</string>
+
+    <string name="str_cancel">取消</string>
+    <string name="str_confirm">确定</string>
+    <string name="str_national_exam">国考</string>
+    <string name="str_on_inch">1寸</string>
+    <string name="str_two_inch">2寸</string>
+    <string name="str_customize">自定义</string>
+    <string name="str_finish">完成</string>
+    <string name="str_re_cut">重新裁剪</string>
+    <string name="str_save_local">保存到本地</string>
+    <string name="str_customize_size">自定义尺寸</string>
+    <string name="str_width_colon">宽 ：</string>
+    <string name="str_height_colon">高 ：</string>
+    <string name="str_pixel">px</string>
 </resources>

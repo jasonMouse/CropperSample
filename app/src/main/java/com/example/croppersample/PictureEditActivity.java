@@ -65,6 +65,7 @@ public class PictureEditActivity extends AppCompatActivity {
     private int textUnSelectedTextColor;                    // 处于未选中状态下的文本颜色
 
     private EditPictureSizeDialog editDialog;               // 底部对话框
+    private String strPictureSize;                          // 图片尺寸的格式化器
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -113,6 +114,8 @@ public class PictureEditActivity extends AppCompatActivity {
         textUnSelectedTextColor = getResources().getColor(R.color.color_ffffff);
         textSelectedBgRes = R.drawable.shape_bg_white_corner_4dp;
         textSelectedTextColor = getResources().getColor(R.color.color_1c1c1c);
+
+        strPictureSize = context.getResources().getString(R.string.str_picture_size);
     }
 
     // 初始化监听器
@@ -128,7 +131,7 @@ public class PictureEditActivity extends AppCompatActivity {
                         break;
                     // 国考
                     case R.id.flNationalExam:
-                        tvEditPictureSize.setText("130px*160px");
+                        tvEditPictureSize.setText(String.format(strPictureSize, 130, 160));
                         targetWidth = 130;
                         targetHeight = 160;
                         civEditPicture.setAspectRatio(13, 16);
@@ -137,7 +140,7 @@ public class PictureEditActivity extends AppCompatActivity {
                         break;
                     // 一寸
                     case R.id.flOneInch:
-                        tvEditPictureSize.setText("413px*295px");
+                        tvEditPictureSize.setText(String.format(strPictureSize, 413, 295));
                         targetWidth = 413;
                         targetHeight = 295;
                         civEditPicture.setAspectRatio(413, 295);
@@ -146,7 +149,7 @@ public class PictureEditActivity extends AppCompatActivity {
                         break;
                     // 两寸
                     case R.id.flTwoInch:
-                        tvEditPictureSize.setText("626px*413px");
+                        tvEditPictureSize.setText(String.format(strPictureSize, 626, 413));
                         targetWidth = 626;
                         targetHeight = 413;
                         civEditPicture.setAspectRatio(626, 413);
@@ -160,7 +163,7 @@ public class PictureEditActivity extends AppCompatActivity {
                             editDialog = new EditPictureSizeDialog((Activity) context, 0, 0, new EditPictureSizeDialog.OnSizeChangeListener() {
                                 @Override
                                 public void onConfirm(int width, int height) {
-                                    tvEditPictureSize.setText(width + "px*" + height + "px");
+                                    tvEditPictureSize.setText(String.format(strPictureSize, width, height));
                                     targetWidth = width;
                                     targetHeight = height;
                                     civEditPicture.setAspectRatio(width, height);
@@ -210,9 +213,9 @@ public class PictureEditActivity extends AppCompatActivity {
                     // 保存到本地
                     case R.id.tvSaveLocal:
                         String result = BitmapUtils.saveImageToGallery(context, cutResult, "cropper_sample");
-                        String msg = "存储成功！";
+                        String msg = context.getResources().getString(R.string.str_picture_save_success);
                         if (TextUtils.isEmpty(result)) {
-                            msg = "存储失败!";
+                            msg = context.getResources().getString(R.string.str_picture_save_fail);
                         }
                         ToastUtil.shortMsg(context, msg);
                         break;
