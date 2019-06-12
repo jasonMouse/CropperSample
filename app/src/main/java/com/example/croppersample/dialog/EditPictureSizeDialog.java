@@ -24,8 +24,6 @@ public class EditPictureSizeDialog {
     private Dialog editPictureSizeDialog;                           // 对话框
     private View.OnClickListener onClickListener;                   // 点击事件监听器
     private OnSizeChangeListener sizeChangeListener;                // 和外界交互的监听器
-    private TextWatcher widthWatcher;                               // 宽度文本输入监听器
-    private TextWatcher heightWatcher;                              // 高度文本输入监听器
 
     public EditPictureSizeDialog(Activity context, int sourceWidth, int sourceHeight, OnSizeChangeListener listener) {
         this.context = context;
@@ -54,13 +52,6 @@ public class EditPictureSizeDialog {
         TextView tvCancel = editPictureSizeDialog.findViewById(R.id.tvCancel);
         TextView tvConfirm = editPictureSizeDialog.findViewById(R.id.tvConfirm);
 
-        // 删除文本输入监听器
-        if (widthWatcher != null) {
-            etWidth.removeTextChangedListener(widthWatcher);
-        }
-        if (heightWatcher != null) {
-            etHeight.removeTextChangedListener(heightWatcher);
-        }
         if (sourceWidth <= 0) {
             etWidth.setText("");
         } else {
@@ -71,57 +62,6 @@ public class EditPictureSizeDialog {
         } else {
             etHeight.setText(String.valueOf(sourceHeight));
         }
-
-        // 获取到屏幕宽度和高度的最小值，作为可输入最大值
-        int screenWidth = DeviceUtil.getScreenWidth(context);
-        int screenHeight = DeviceUtil.getScreenHeight(context);
-        final int maxValue = screenHeight > screenWidth ? screenWidth : screenHeight;
-        widthWatcher = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable sResult) {
-                String strResult = sResult.toString();
-                if (!TextUtils.isEmpty(strResult)) {
-                    int intResult = Integer.parseInt(strResult);
-                    if (intResult > maxValue) {
-                        ToastUtil.shortMsg(context, "输入的宽度不得超过" + maxValue);
-                    }
-                }
-            }
-        };
-        heightWatcher = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable sResult) {
-                String strResult = sResult.toString();
-                if (!TextUtils.isEmpty(strResult)) {
-                    int intResult = Integer.parseInt(strResult);
-                    if (intResult > maxValue) {
-                        ToastUtil.shortMsg(context, "输入的高度不得超过" + maxValue);
-                    }
-                }
-            }
-        };
-        etWidth.addTextChangedListener(widthWatcher);
-        etHeight.addTextChangedListener(heightWatcher);
 
         // 添加点击监听器
         if (onClickListener == null) {
@@ -147,26 +87,19 @@ public class EditPictureSizeDialog {
                             if (!TextUtils.isEmpty(strHeight)) {
                                 tempHeight = Integer.parseInt(strHeight);
                             }
-                            // 如果宽度和高度符合要求
-                            if (tempWidth <= maxValue && tempHeight <= maxValue) {
-                                if (sizeChangeListener != null) {
-                                    if (tempWidth <= 0 || tempHeight <= 0) {
-                                        sizeChangeListener.onCancel();
-                                    } else {
-                                        sizeChangeListener.onConfirm(tempWidth, tempHeight);
-                                    }
+                            if (sizeChangeListener != null) {
+                                if (tempWidth <= 0 || tempHeight <= 0) {
+                                    sizeChangeListener.onCancel();
+                                } else {
+                                    sizeChangeListener.onConfirm(tempWidth, tempHeight);
+                                    // 临时保存上次输入的值
+                                    savedHeight = tempHeight;
+                                    savedWidth = tempWidth;
                                 }
-                                // 临时保存上次输入的值
-                                savedHeight = tempHeight;
-                                savedWidth = tempWidth;
-                                // 隐藏软键盘和对话框
-                                DeviceUtil.hideSoftKeyboard(context);
-                                dismissDialog();
-                            } else if (tempWidth > maxValue) {
-                                ToastUtil.shortMsg(context, "输入的宽度不得超过" + maxValue);
-                            } else {
-                                ToastUtil.shortMsg(context, "输入的高度不得超过" + maxValue);
                             }
+                            // 隐藏软键盘和对话框
+                            DeviceUtil.hideSoftKeyboard(context);
+                            dismissDialog();
                             break;
 
                     }
