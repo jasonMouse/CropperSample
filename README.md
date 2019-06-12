@@ -43,3 +43,6 @@
     <attr name="surroundingAreaBg" format="color" />
 </declare-styleable>
 ```
+
+裁剪库出处：https://github.com/edmodo/cropper
+
