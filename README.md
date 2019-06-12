@@ -1,0 +1,2 @@
+# CropperSample
+主要用于解决图片裁剪固定缩放相关问题的demo
