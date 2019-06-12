@@ -240,7 +240,7 @@ public class PictureEditActivity extends AppCompatActivity {
     private void initBaseData() {
         originalUrl = getIntent().getStringExtra("data");
         if (TextUtils.isEmpty(originalUrl)) {
-            ToastUtil.shortMsg(context, "参数传递错误");
+            ToastUtil.shortMsg(context, context.getResources().getString(R.string.str_parameter_passing_error));
             finish();
             return;
         }
