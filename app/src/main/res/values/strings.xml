@@ -12,7 +12,7 @@
     <string name="str_input_height_max_value">输入的高度不得超过%d</string>
     <string name="str_picture_not_exist">图片文件不存在，请重新选取后再试</string>
     <string name="str_picture_size_too_small">图片尺寸过小，请选择其他图片</string>
-    <string name="str_picture_size">%dpx*%dpx</string>
+    <string name="str_picture_size">%1$dpx*%2$dpx</string>
     <string name="str_picture_save_success">存储成功！</string>
     <string name="str_picture_save_fail">存储失败！</string>
     <string name="str_parameter_passing_error">参数传递错误</string>
